@@ -25,8 +25,8 @@ func CloseSession(t *Tracker) error {
 	if e != nil {
 		return e
 	}
-	defer b.Close()
 	defer a.Close()
+	defer b.Close()
 	return nil
 }
 func CloseSessionCorrect(t *Tracker) error {
@@ -34,7 +34,7 @@ func CloseSessionCorrect(t *Tracker) error {
 	if e != nil {
 		return e
 	}
-	defer b.Close()
 	defer a.Close()
+	defer b.Close()
 	return nil
 }

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "metrics": {
+    "production_loc": 2151,
+    "production_files": 44,
+    "production_packages": 9,
+    "test_files": 9,
+    "production_functions": 311,
+    "decision_points": 287
+  },
+  "persistence": {
+    "module": "go.etcd.io/bbolt",
+    "entities": ["Extension", "CallSession", "PermissionNotice", "Device", "CallRecord"],
+    "reopen_test": "TestPersistenceSurvivesReopen"
+  },
+  "workflows": [
+    {"steps": ["register guide and desk extensions", "publish online presence", "dial and deliver audio offer", "accept and record connected call"], "test": "TestWorkflowOne"},
+    {"steps": ["register a service desk extension", "discover an offline device", "show deterministic offline error", "keep the directory state unchanged"], "test": "TestWorkflowTwo"},
+    {"steps": ["register guide and device extensions", "send a signaling offer", "reject the incoming call", "persist the rejected transition"], "test": "TestWorkflowThree"}
+  ]
+}
